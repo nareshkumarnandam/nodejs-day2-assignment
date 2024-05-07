@@ -29,17 +29,17 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-// function addTask(task) {
-//   fs.appendFile(todoFilePath, task + "\n", (err) => {
-//     if (err) throw err;
-//     console.log("Task added successfully!");
-//     rl.close();
-//   });
-// }
+function addTask(task) {
+  fs.appendFile(todoFilePath, task + "\n", (err) => {
+    if (err) throw err;
+    console.log("Task added successfully!");
+    rl.close();
+  });
+}
 
-// rl.question("Enter the task: ", (task) => {
-//   addTask(task);
-// });
+rl.question("Enter the task: ", (task) => {
+  addTask(task);
+});
 
 function viewTasks() {
   fs.readFile(todoFilePath, { encoding: "utf-8" }, (err, data) => {
